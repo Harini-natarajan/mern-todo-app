@@ -1,0 +1,622 @@
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap');
+
+:root {
+    font-family: 'DM Sans', sans-serif;
+    color: #25352e;
+    background: #f7f7f2;
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-width: 320px;
+    background: #f7f7f2;
+}
+
+button, input {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+    transition: all .25s ease;
+}
+
+/* MAIN LAYOUT */
+
+.app-layout {
+    min-height: 100vh;
+}
+
+.sidebar {
+    width: 245px;
+    position: fixed;
+    inset: 0 auto 0 0;
+    background: #173c30;
+    color: white;
+    padding: 32px 22px;
+    display: flex;
+    flex-direction: column;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-family: 'Manrope', sans-serif;
+    font-size: 24px;
+    font-weight: 800;
+    margin-bottom: 65px;
+}
+
+.brand-logo {
+    width: 37px;
+    height: 37px;
+    border-radius: 12px;
+    background: #d8e8c9;
+    color: #173c30;
+    display: grid;
+    place-items: center;
+    font-size: 23px;
+}
+
+.brand-dot {
+    color: #b5d49c;
+}
+
+.nav-label {
+    color: #91aa9e;
+    font-size: 10px;
+    letter-spacing: 2px;
+    font-weight: 700;
+    margin: 0 10px 18px;
+}
+
+.nav-item {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    padding: 14px;
+    border-radius: 12px;
+    color: #c1d0c7;
+    margin-bottom: 9px;
+    font-size: 14px;
+}
+
+.nav-item span {
+    font-size: 19px;
+}
+
+.nav-item.active {
+    background: #315847;
+    color: white;
+    font-weight: 700;
+}
+
+.sidebar-bottom {
+    margin-top: auto;
+}
+
+.user-card {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    border-top: 1px solid #426051;
+    padding-top: 23px;
+}
+
+.user-avatar, .top-avatar {
+    width: 39px;
+    height: 39px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    font-weight: 800;
+    background: #dce8d2;
+    color: #214b38;
+}
+
+.user-card strong {
+    display: block;
+    font-size: 12px;
+}
+
+.user-card small {
+    display: block;
+    margin-top: 4px;
+    color: #a7bdb0;
+    font-size: 11px;
+}
+
+/* CONTENT */
+
+.main-content {
+    max-width: 1550px;
+    margin-left: 245px;
+    padding: 38px 6%;
+}
+
+.topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 32px;
+}
+
+.breadcrumb {
+    font-size: 12px;
+    color: #8a958d;
+}
+
+.topbar h1 {
+    font-family: 'Manrope', sans-serif;
+    font-size: 27px;
+    margin-top: 7px;
+    letter-spacing: -1px;
+}
+
+.topbar-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.today-label {
+    font-size: 12px;
+    color: #668273;
+    background: #e9eee5;
+    padding: 10px 15px;
+    border-radius: 30px;
+}
+
+.top-avatar {
+    width: 42px;
+    height: 42px;
+}
+
+/* WELCOME */
+
+.welcome-card {
+    min-height: 210px;
+    background: #244d3b;
+    border-radius: 22px;
+    padding: 37px 42px;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 27px;
+}
+
+.welcome-content {
+    position: relative;
+    z-index: 1;
+}
+
+.welcome-tag {
+    color: #c1d9b2;
+    font-size: 10px;
+    letter-spacing: 2px;
+    font-weight: 700;
+}
+
+.welcome-card h2 {
+    font-family: 'Manrope', sans-serif;
+    font-size: clamp(26px, 4vw, 37px);
+    margin: 14px 0 9px;
+}
+
+.welcome-card p {
+    color: #d0ded3;
+    font-size: 13px;
+    line-height: 1.7;
+    max-width: 420px;
+}
+
+.welcome-decoration {
+    font-size: 155px;
+    color: rgba(218, 236, 205, .13);
+    transform: rotate(-15deg);
+    margin-right: 35px;
+}
+
+/* STATS */
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 19px;
+    margin-bottom: 20px;
+}
+
+.stat-card {
+    background: #fff;
+    border: 1px solid #eeeee6;
+    border-radius: 18px;
+    padding: 23px;
+    transition: transform .25s, box-shadow .25s;
+}
+
+.stat-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 25px rgba(38, 65, 49, .07);
+}
+
+.stat-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #7e8b81;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.stat-icon {
+    width: 35px;
+    height: 35px;
+    display: grid;
+    place-items: center;
+    border-radius: 11px;
+    background: #eef1e9;
+    color: #466d50;
+    font-size: 17px;
+}
+
+.green-icon {
+    background: #e6f3e9;
+    color: #37945b;
+}
+
+.orange-icon {
+    background: #fff2e2;
+    color: #d18c38;
+}
+
+.stat-card h2 {
+    font-family: 'Manrope', sans-serif;
+    font-size: 32px;
+    margin: 17px 0 4px;
+    color: #263b30;
+}
+
+.stat-card p {
+    color: #a0a89f;
+    font-size: 11px;
+}
+
+/* PROGRESS */
+
+.progress-card {
+    padding: 24px;
+    background: #fff;
+    border: 1px solid #eeeee6;
+    border-radius: 18px;
+    margin-bottom: 27px;
+}
+
+.progress-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 17px;
+}
+
+.progress-heading h3 {
+    font-size: 14px;
+}
+
+.progress-heading p {
+    font-size: 11px;
+    color: #9aa39b;
+    margin-top: 5px;
+}
+
+.progress-heading strong {
+    color: #34704b;
+    font-size: 19px;
+}
+
+.progress-track {
+    height: 9px;
+    background: #edf0e9;
+    border-radius: 30px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    border-radius: 30px;
+    background: linear-gradient(90deg, #4e805b, #a3c58d);
+    transition: width .4s ease;
+}
+
+/* TASK PANEL */
+
+.tasks-panel {
+    background: #fff;
+    border: 1px solid #eeeee6;
+    border-radius: 21px;
+    padding: 30px;
+}
+
+.tasks-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.section-eyebrow {
+    font-size: 10px;
+    letter-spacing: 2px;
+    font-weight: 800;
+    color: #7a9b79;
+}
+
+.tasks-heading h2 {
+    font-family: 'Manrope', sans-serif;
+    font-size: 23px;
+    margin-top: 7px;
+}
+
+.tasks-heading p {
+    font-size: 12px;
+    color: #9aa39b;
+    margin-top: 5px;
+}
+
+.clear-all-btn {
+    padding: 10px 15px;
+    border: 1px solid #f0ded8;
+    border-radius: 9px;
+    background: #fff8f5;
+    color: #ba6656;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.clear-all-btn:hover {
+    background: #fbeae4;
+}
+
+/* ADD FORM */
+
+.add-task-box {
+    padding: 17px;
+    border: 1px solid #e9ede4;
+    background: #f8f9f5;
+    border-radius: 14px;
+    margin-bottom: 24px;
+}
+
+.todo-form {
+    display: flex;
+    gap: 12px;
+}
+
+.todo-form input {
+    flex: 1;
+    min-width: 0;
+    border: 1px solid #e5e9df;
+    background: white;
+    border-radius: 10px;
+    padding: 14px 16px;
+    outline: none;
+    color: #334a39;
+    font-size: 13px;
+}
+
+.todo-form input:focus {
+    border-color: #6b9772;
+    box-shadow: 0 0 0 3px rgba(94, 142, 99, .1);
+}
+
+.todo-form button {
+    border: none;
+    padding: 0 22px;
+    border-radius: 10px;
+    background: #244d3b;
+    color: white;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.todo-form button:hover {
+    background: #386b4c;
+}
+
+/* TODO LIST */
+
+.todo-list {
+    display: flex;
+    flex-direction: column;
+    gap: 11px;
+}
+
+.todo-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 14px;
+    padding: 17px;
+    border: 1px solid #eff0e9;
+    border-radius: 13px;
+    background: #fff;
+    transition: all .2s ease;
+}
+
+.todo-item:hover {
+    background: #fbfcf9;
+    border-color: #dce7d9;
+    transform: translateY(-2px);
+}
+
+.todo-item span {
+    flex: 1;
+    overflow-wrap: anywhere;
+    font-size: 13px;
+    font-weight: 600;
+    color: #35493b;
+}
+
+.todo-item div {
+    display: flex;
+    gap: 8px;
+}
+
+.todo-item button {
+    padding: 9px 12px;
+    border: none;
+    border-radius: 8px;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.todo-item button:first-child {
+    background: #edf3e9;
+    color: #416d4a;
+}
+
+.todo-item button:nth-child(2) {
+    background: #e7f4eb;
+    color: #328052;
+}
+
+.todo-item button:last-child {
+    background: #fff0ed;
+    color: #c76a5c;
+}
+
+.todo-item button:hover {
+    filter: brightness(.95);
+    transform: translateY(-1px);
+}
+
+.todo-item input {
+    flex: 1;
+    min-width: 0;
+    padding: 11px;
+    border: 1px solid #7ca581;
+    border-radius: 9px;
+    outline: none;
+}
+
+.status-message, .error-message,
+.todo-list > p {
+    text-align: center;
+    padding: 28px;
+    font-size: 13px;
+    color: #929d91;
+}
+
+.error-message {
+    color: #c76a5c;
+}
+
+.page-footer {
+    text-align: center;
+    color: #a1a99f;
+    font-size: 11px;
+    padding: 25px;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 900px) {
+    .sidebar {
+        width: 190px;
+    }
+
+    .main-content {
+        margin-left: 190px;
+        padding: 30px;
+    }
+
+    .stats-grid {
+        gap: 10px;
+    }
+
+    .stat-card {
+        padding: 17px;
+    }
+}
+
+@media (max-width: 650px) {
+    .sidebar {
+        position: static;
+        width: 100%;
+        padding: 15px 20px;
+    }
+
+    .brand {
+        margin-bottom: 0;
+        font-size: 21px;
+    }
+
+    .nav-label,
+    .nav-item,
+    .sidebar-bottom {
+        display: none;
+    }
+
+    .main-content {
+        margin-left: 0;
+        padding: 23px 15px;
+    }
+
+    .topbar h1 {
+        font-size: 23px;
+    }
+
+    .today-label {
+        display: none;
+    }
+
+    .welcome-card {
+        padding: 27px 23px;
+        min-height: 185px;
+    }
+
+    .welcome-decoration {
+        font-size: 85px;
+        margin-right: 0;
+    }
+
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .stat-card {
+        padding: 19px;
+    }
+
+    .tasks-panel {
+        padding: 19px 14px;
+    }
+
+    .todo-form {
+        flex-direction: column;
+    }
+
+    .todo-form button {
+        padding: 13px;
+    }
+
+    .todo-item {
+        flex-wrap: wrap;
+    }
+
+    .todo-item div {
+        width: 100%;
+        flex-wrap: wrap;
+    }
+}
