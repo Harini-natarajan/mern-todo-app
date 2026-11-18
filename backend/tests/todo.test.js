@@ -143,7 +143,7 @@ describe("Todo API Testing with MongoDB", () => {
             });
 
         expect(response.statusCode).toBe(404);
-        expect(response.body.message).toBe("Todo not found");
+        expect(response.body.message).toBe("Todo not found"); 
     });
 
     // 10. REJECT SPACES ONLY
@@ -218,7 +218,5 @@ test("Should return 500 if database fails while fetching todos", async () => {
 
     expect(response.body.message).toBe("Database error");
 });
-
-
 
 });
