@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const API = axios.create({
-    baseURL: "http://localhost:5000/api/todos"
+    baseURL: "http://3.25.113.38/api/todos"
 });
 
 // GET all todos

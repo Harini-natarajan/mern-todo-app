@@ -620,3 +620,179 @@ button {
         flex-wrap: wrap;
     }
 }
+
+
+/* ================================
+   TASKLY AI ASSISTANT
+================================ */
+
+.ai-assistant {
+    background: #ffffff;
+    border: 1px solid #e8eee9;
+    border-radius: 20px;
+    padding: 28px;
+    margin: 28px 0;
+    box-shadow: 0 5px 20px rgba(23, 60, 48, 0.04);
+}
+
+.ai-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 22px;
+}
+
+.section-eyebrow {
+    display: inline-block;
+    color: #638675;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    margin-bottom: 8px;
+}
+
+.ai-header h2 {
+    color: #173c30;
+    font-size: 23px;
+    font-weight: 700;
+    margin: 0 0 8px;
+}
+
+.ai-header p {
+    color: #84918a;
+    font-size: 14px;
+    margin: 0;
+    line-height: 1.6;
+}
+
+/* Input area */
+
+.ai-input-area {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.ai-input-area textarea {
+    width: 100%;
+    min-height: 110px;
+    resize: vertical;
+    padding: 16px;
+    border: 1px solid #dce6df;
+    border-radius: 12px;
+    background: #fafbf9;
+    color: #243c32;
+    font-family: inherit;
+    font-size: 14px;
+    line-height: 1.6;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.ai-input-area textarea::placeholder {
+    color: #a1ada5;
+}
+
+.ai-input-area textarea:focus {
+    border-color: #638675;
+    box-shadow: 0 0 0 3px rgba(99, 134, 117, 0.12);
+    background: #ffffff;
+}
+
+/* Generate button */
+
+.ai-input-area button {
+    align-self: flex-start;
+    border: none;
+    border-radius: 10px;
+    padding: 13px 22px;
+    background: #173c30;
+    color: #ffffff;
+    font-size: 13px;
+    font-weight: 600;
+    font-family: inherit;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.ai-input-area button:hover:not(:disabled) {
+    background: #285641;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 14px rgba(23, 60, 48, 0.16);
+}
+
+.ai-input-area button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* Error message */
+
+.ai-assistant .error-message {
+    color: #c0392b;
+    background: #fff3f1;
+    border: 1px solid #f5d4cf;
+    border-radius: 9px;
+    padding: 11px 14px;
+    font-size: 13px;
+    margin-top: 16px;
+}
+
+/* AI result */
+
+.ai-result {
+    margin-top: 24px;
+    padding: 20px;
+    background: #f5f8f5;
+    border: 1px solid #e0eae2;
+    border-radius: 14px;
+    animation: aiFadeIn 0.35s ease;
+}
+
+.ai-result h3 {
+    color: #244d3b;
+    font-size: 16px;
+    margin: 0 0 14px;
+}
+
+.ai-result pre {
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+    color: #52645a;
+    font-family: inherit;
+    font-size: 14px;
+    line-height: 1.9;
+    margin: 0;
+}
+
+@keyframes aiFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive design */
+
+@media (max-width: 768px) {
+    .ai-assistant {
+        padding: 20px;
+        margin: 20px 0;
+    }
+
+    .ai-header h2 {
+        font-size: 20px;
+    }
+
+    .ai-input-area button {
+        width: 100%;
+    }
+
+    .ai-result {
+        padding: 16px;
+    }
+}

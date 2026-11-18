@@ -4,6 +4,7 @@ import "./App.css";
 
 import TodoForm from "./components/TodoForm";
 import TodoList from "./components/TodoList";
+import AIAssistant from "./components/AIAssistant";
 
 import {
     getTodos,
@@ -257,6 +258,8 @@ return (
                     />
                 </div>
             </section>
+
+            <AIAssistant />
 
             <section className="tasks-panel">
 
